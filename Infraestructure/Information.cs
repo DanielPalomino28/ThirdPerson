@@ -25,6 +25,32 @@ namespace WebApi.Infraestructure
 
         public List<ThirdPersn> GetAllThirdPersons()
         {
+            if (thirdpersons.Count() == 0)
+            {
+                var thirdperson1 = new ThirdPersn();
+                thirdperson1.firstName = "Scarlett";
+                thirdperson1.lastName = "Johansson";
+                thirdperson1.documentType = "Pasaporte";
+                thirdperson1.documentNumber = "ABC123";
+                thirdperson1.birthdate = "1984-11-22";
+                thirdperson1.gender = "Femenino";
+                thirdperson1.civilStatus = "Casado/a";
+                thirdperson1.doctor = "Daniel Palomino";
+                thirdperson1.isPatient = true;
+                thirdpersons.Add(thirdperson1);
+
+                var thirdperson2 = new ThirdPersn();
+                thirdperson2.firstName = "Juan";
+                thirdperson2.lastName = "Palencia";
+                thirdperson2.documentType = "Cédula de ciudadanía";
+                thirdperson2.documentNumber = "4271101";
+                thirdperson2.birthdate = "1965-04-04";
+                thirdperson2.gender = "Masculino";
+                thirdperson2.civilStatus = "Soltero/a";
+                thirdperson2.doctor = "Daniel Gallego";
+                thirdperson2.isPatient = false;
+                thirdpersons.Add(thirdperson2);
+            }
             return thirdpersons;
         }
         

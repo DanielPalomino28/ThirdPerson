@@ -23,6 +23,11 @@ namespace ThirdPerson.Controllers
             return View();
         }
 
+        public string Prueba()
+        {
+            return "Prueba";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

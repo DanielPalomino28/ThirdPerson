@@ -8,6 +8,7 @@ using WebApi.Models;
 namespace WebApi.Controllers
 {
     //[EnableCors(origins: "*", headers: "*", methods: "*")]
+    
     public class ThirdPersonController : Controller
     {
         Information information;
@@ -22,11 +23,11 @@ namespace WebApi.Controllers
         }
 
         // GET: ThirdPersonController
-        public List<ThirdPersn> Get()
+        public List<ThirdPersn> GetAllThirdPersons()
         {
             if(information.GetAllThirdPersons().Count == 0)
             {
-                ThirdPersn persn = new ThirdPersn()
+                ThirdPersn thirdPersn = new ThirdPersn()
                 {
                     firstName = "Oslo",
                     lastName = "Baud",

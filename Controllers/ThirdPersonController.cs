@@ -25,47 +25,46 @@ namespace WebApi.Controllers
         // GET: ThirdPersonController
         public List<ThirdPersn> GetAllThirdPersons()
         {
-            if(information.GetAllThirdPersons().Count == 0)
-            {
-                ThirdPersn thirdPersn = new ThirdPersn()
-                {
-                    firstName = "Oslo",
-                    lastName = "Baud",
-                    documentType = "Pasaporte",
-                    documentNumber = "8281101",
-                    birthdate = "1983-08-11",
-                    gender = "Masculino",
-                    civilStatus = "Soltero",
-                    doctor = "Daniel Palomino",
-                    isPatient = true,
-            };
-            }
             return information.GetAllThirdPersons();
         }
 
         // GET: ThirdPersonController/documentNumber
-        public ThirdPersn Get(string documentNumber)
+        public IActionResult Get(string documentNumber)
         {
-            var thirdPersn = new ThirdPersn();
-            return information.GetThirdPersnByDocumentNumber(documentNumber);
+            var thirdPersn = information.GetThirdPersnByDocumentNumber(documentNumber);
+
+            if (thirdPersn == null)
+            {
+                return NotFound(); // Devolver un NotFoundResult (StatusCode 404)
+            }
+
+            // Devolver los datos en formato JSON
+            return Ok(thirdPersn);
         }
 
-        
+
+
         // POST: ThirdPersonController/Create
-        public void Post([FromBody] ThirdPersn thirdPersn)
+        public IActionResult Post([FromBody] ThirdPersn thirdPersn)
         {
             information.CreateThirdPerson(thirdPersn);
+            return Ok(); // o un CreatedResult si es apropiado
         }
+
 
         // Put: ThirdPersonController
-        public void Put([FromBody] ThirdPersn thirdPersn)
+        public IActionResult Put([FromBody] ThirdPersn thirdPersn)
         {
             information.Update(thirdPersn);
+            return Ok(); // o un NoContentResult si es apropiado
         }
 
-        public void Delete(string documentNumber)
+        // Delete: ThirdPersonController
+        public IActionResult Delete(string documentNumber)
         {
             information.Delete(documentNumber);
+            return Ok(); // o un NoContentResult si es apropiado
         }
+
     }
 }

@@ -1,5 +1,8 @@
 ﻿using System.Xml.Linq;
 using WebApi.Models;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace WebApi.Infraestructure
 {
@@ -16,12 +19,19 @@ namespace WebApi.Infraestructure
             thirdpersons.Add(thirdperson);
         }
 
-        public ThirdPersn GetThirdPersnByDocumentNumber(string documentNumber)
+        public IActionResult GetThirdPersnByDocumentNumber(string documentNumber)
         {
-            var ThirdPersn = new ThirdPersn();
-            ThirdPersn datosThirdPerson = thirdpersons.Find(t => t.documentNumber == documentNumber);            
-            return datosThirdPerson;
+            var datosThirdPerson = thirdpersons.Find(t => t.documentNumber == documentNumber);
+            // Verificar si se encontró el tercero
+            if (datosThirdPerson == null)
+            {
+                return new NotFoundResult(); // StatusCode(404)
+            }
+
+            // Devolver los datos en formato JSON
+            return new JsonResult(datosThirdPerson);
         }
+
 
         public List<ThirdPersn> GetAllThirdPersons()
         {
@@ -36,7 +46,7 @@ namespace WebApi.Infraestructure
                 thirdperson1.gender = "Femenino";
                 thirdperson1.civilStatus = "Casado/a";
                 thirdperson1.doctor = "Daniel Palomino";
-                thirdperson1.isPatient = true;
+                thirdperson1.isPatient = "true";
                 thirdpersons.Add(thirdperson1);
 
                 var thirdperson2 = new ThirdPersn();
@@ -48,7 +58,7 @@ namespace WebApi.Infraestructure
                 thirdperson2.gender = "Masculino";
                 thirdperson2.civilStatus = "Soltero/a";
                 thirdperson2.doctor = "Daniel Gallego";
-                thirdperson2.isPatient = false;
+                thirdperson2.isPatient = "false";
                 thirdpersons.Add(thirdperson2);
             }
             return thirdpersons;

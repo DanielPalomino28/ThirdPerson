@@ -10,6 +10,6 @@
         public string gender { get; set; }
         public string civilStatus { get; set; }
         public string doctor { get; set; }
-        public Boolean isPatient { get; set; }
+        public string isPatient { get; set; }
     }
 }

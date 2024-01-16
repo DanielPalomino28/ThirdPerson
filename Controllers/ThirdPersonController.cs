@@ -38,23 +38,23 @@ namespace WebApi.Controllers
         public IActionResult Post([FromBody] ThirdPersn thirdPersn)
         {
             information.CreateThirdPerson(thirdPersn);
-            return Ok(); // o un CreatedResult si es apropiado
+            return Ok(); 
         }
 
 
         // Put: ThirdPersonController
-        public ThirdPersn Put([FromBody] ThirdPersn thirdpersn)
+        public IActionResult Put([FromBody] ThirdPersn thirdpersn)
         {
             information.Update(thirdpersn);
 
-            return thirdpersn;
+            return Ok(); 
         }
 
         // Delete: ThirdPersonController
         public IActionResult Delete(string documentNumber)
         {
             information.Delete(documentNumber);
-            return Ok(); // o un NoContentResult si es apropiado
+            return Ok(); 
         }
 
     }

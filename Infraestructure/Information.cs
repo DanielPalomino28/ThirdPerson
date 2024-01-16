@@ -61,14 +61,17 @@ namespace WebApi.Infraestructure
 
         public void Update(ThirdPersn thirdperson)
         {
-            var locationThirdpersn = thirdpersons.FindIndex(t => t.documentNumber == t.documentNumber);
-            thirdpersons[locationThirdpersn] = thirdperson;
+            var thirdpersonDelete = thirdpersons.Find(t => t.documentNumber == thirdperson.documentNumber);
+            thirdpersons.Remove(thirdpersonDelete);
+            CreateThirdPerson(thirdperson);
+            //var locationThirdpersn = thirdpersons.FindIndex(t => t.documentNumber == t.documentNumber);
+            //thirdpersons[locationThirdpersn] = thirdpersons.Remove(thirdperson);
         }
 
         public void Delete(string documentNumber)
         {
-            var thirdperson = thirdpersons.Find(t =>t.documentNumber == documentNumber);
-            thirdpersons.Remove(thirdperson);
+            var thirdpersonDelete = thirdpersons.Find(t => t.documentNumber == documentNumber);
+            thirdpersons.Remove(thirdpersonDelete);
         }
         //Método para crear y mostrar lista de géneros
         public List<Gender> GetAllGenders()

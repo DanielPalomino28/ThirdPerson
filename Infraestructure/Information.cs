@@ -70,8 +70,11 @@ namespace WebApi.Infraestructure
 
         public void Delete(string documentNumber)
         {
-            var thirdpersonDelete = thirdpersons.Find(t => t.documentNumber == documentNumber);
-            thirdpersons.Remove(thirdpersonDelete);
+            var documentThirdperson = thirdpersons.Find(t => t.documentNumber == documentNumber);
+            if (documentThirdperson != null)
+            {
+                thirdpersons.Remove(documentThirdperson);
+            }
         }
         //Método para crear y mostrar lista de géneros
         public List<Gender> GetAllGenders()

@@ -48,6 +48,7 @@ namespace WebApi.Controllers
             information.Update(thirdpersn);
 
             return Ok(); 
+
         }
 
         // Delete: ThirdPersonController

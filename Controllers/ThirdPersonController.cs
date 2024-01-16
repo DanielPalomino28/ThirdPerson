@@ -29,21 +29,11 @@ namespace WebApi.Controllers
         }
 
         // GET: ThirdPersonController/documentNumber
-        public IActionResult Get(string documentNumber)
+        public ThirdPersn Get(string documentNumber)
         {
-            var thirdPersn = information.GetThirdPersnByDocumentNumber(documentNumber);
-
-            if (thirdPersn == null)
-            {
-                return NotFound(); // Devolver un NotFoundResult (StatusCode 404)
-            }
-
-            // Devolver los datos en formato JSON
-            return Ok(thirdPersn);
+            var ThirdPersn = new ThirdPersn();
+            return information.GetThirdPersnByDocumentNumber(documentNumber);
         }
-
-
-
         // POST: ThirdPersonController/Create
         public IActionResult Post([FromBody] ThirdPersn thirdPersn)
         {
@@ -53,10 +43,11 @@ namespace WebApi.Controllers
 
 
         // Put: ThirdPersonController
-        public IActionResult Put([FromBody] ThirdPersn thirdPersn)
+        public ThirdPersn Put([FromBody] ThirdPersn thirdpersn)
         {
-            information.Update(thirdPersn);
-            return Ok(); // o un NoContentResult si es apropiado
+            information.Update(thirdpersn);
+
+            return thirdpersn;
         }
 
         // Delete: ThirdPersonController

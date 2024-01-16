@@ -19,17 +19,11 @@ namespace WebApi.Infraestructure
             thirdpersons.Add(thirdperson);
         }
 
-        public IActionResult GetThirdPersnByDocumentNumber(string documentNumber)
+        public ThirdPersn GetThirdPersnByDocumentNumber(string documentNumber)
         {
-            var datosThirdPerson = thirdpersons.Find(t => t.documentNumber == documentNumber);
-            // Verificar si se encontró el tercero
-            if (datosThirdPerson == null)
-            {
-                return new NotFoundResult(); // StatusCode(404)
-            }
-
-            // Devolver los datos en formato JSON
-            return new JsonResult(datosThirdPerson);
+            var ThirdPersn = new ThirdPersn();
+            ThirdPersn result = thirdpersons.Find(element => element.documentNumber == documentNumber);
+            return result;
         }
 
 
@@ -67,8 +61,8 @@ namespace WebApi.Infraestructure
 
         public void Update(ThirdPersn thirdperson)
         {
-            var location = thirdpersons.FindIndex(t => t.documentNumber == t.documentNumber);
-            thirdpersons[location] = thirdperson;
+            var locationThirdpersn = thirdpersons.FindIndex(t => t.documentNumber == t.documentNumber);
+            thirdpersons[locationThirdpersn] = thirdperson;
         }
 
         public void Delete(string documentNumber)

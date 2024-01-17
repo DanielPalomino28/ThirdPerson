@@ -44,16 +44,124 @@ namespace WebApi.Infraestructure
                 thirdpersons.Add(thirdperson1);
 
                 var thirdperson2 = new ThirdPersn();
-                thirdperson2.firstName = "Juan";
-                thirdperson2.lastName = "Palencia";
+                thirdperson2.firstName = "Tony";
+                thirdperson2.lastName = "Stark";
                 thirdperson2.documentType = "Cédula de ciudadanía";
                 thirdperson2.documentNumber = "4271101";
                 thirdperson2.birthdate = "1965-04-04";
                 thirdperson2.gender = "Masculino";
                 thirdperson2.civilStatus = "Soltero/a";
-                thirdperson2.doctor = "Daniel Gallego";
+                thirdperson2.doctor = "";
                 thirdperson2.isPatient = "false";
                 thirdpersons.Add(thirdperson2);
+
+                var thirdPerson4 = new ThirdPersn();
+                thirdPerson4.firstName = "Natasha";
+                thirdPerson4.lastName = "Romanoff";
+                thirdPerson4.documentType = "Pasaporte";
+                thirdPerson4.documentNumber = "ROM007";
+                thirdPerson4.birthdate = "1980-06-21";
+                thirdPerson4.gender = "Femenino";
+                thirdPerson4.civilStatus = "Soltero/a";
+                thirdPerson4.doctor = "Daniel Palomino";
+                thirdPerson4.isPatient = "true";
+                thirdpersons.Add(thirdPerson4);
+
+                var thirdPerson5 = new ThirdPersn();
+                thirdPerson5.firstName = "Bruce";
+                thirdPerson5.lastName = "Banner";
+                thirdPerson5.documentType = "Cédula de ciudadanía";
+                thirdPerson5.documentNumber = "BAN123";
+                thirdPerson5.birthdate = "1969-12-18";
+                thirdPerson5.gender = "Masculino";
+                thirdPerson5.civilStatus = "Casado/a";
+                thirdPerson5.doctor = "Daniel Gallego";
+                thirdPerson5.isPatient = "true";
+                thirdpersons.Add(thirdPerson5);
+
+                var thirdPerson6 = new ThirdPersn();
+                thirdPerson6.firstName = "Peter";
+                thirdPerson6.lastName = "Parker";
+                thirdPerson6.documentType = "Pasaporte";
+                thirdPerson6.documentNumber = "SPD123";
+                thirdPerson6.birthdate = "1998-08-10";
+                thirdPerson6.gender = "Masculino";
+                thirdPerson6.civilStatus = "Soltero/a";
+                thirdPerson6.doctor = "";
+                thirdPerson6.isPatient = "false";
+                thirdpersons.Add(thirdPerson6);
+
+                var thirdPerson7 = new ThirdPersn();
+                thirdPerson7.firstName = "Wanda";
+                thirdPerson7.lastName = "Maximoff";
+                thirdPerson7.documentType = "Documento Nacional de Identidad";
+                thirdPerson7.documentNumber = "WAN456";
+                thirdPerson7.birthdate = "1989-05-15";
+                thirdPerson7.gender = "Femenino";
+                thirdPerson7.civilStatus = "Viudo/a";
+                thirdPerson7.doctor = "Daniel Gallego";
+                thirdPerson7.isPatient = "true";
+                thirdpersons.Add(thirdPerson7);
+
+                var thirdPerson8 = new ThirdPersn();
+                thirdPerson8.firstName = "Thor";
+                thirdPerson8.lastName = "Odinson";
+                thirdPerson8.documentType = "Cédula de Extranjería";
+                thirdPerson8.documentNumber = "THO789";
+                thirdPerson8.birthdate = "1999-01-01";
+                thirdPerson8.gender = "Masculino";
+                thirdPerson8.civilStatus = "Soltero/a";
+                thirdPerson8.doctor = "Breidis Luna";
+                thirdPerson8.isPatient = "true";
+                thirdpersons.Add(thirdPerson8);
+
+                var thirdPerson9 = new ThirdPersn();
+                thirdPerson9.firstName = "Gamora";
+                thirdPerson9.lastName = "Zen Whoberi Ben Titan";
+                thirdPerson9.documentType = "Pasaporte";
+                thirdPerson9.documentNumber = "GAM456";
+                thirdPerson9.birthdate = "2005-09-12";
+                thirdPerson9.gender = "Femenino";
+                thirdPerson9.civilStatus = "Soltero/a";
+                thirdPerson9.doctor = "";
+                thirdPerson9.isPatient = "false";
+                thirdpersons.Add(thirdPerson9);
+
+                var thirdPerson10 = new ThirdPersn();
+                thirdPerson10.firstName = "Steve";
+                thirdPerson10.lastName = "Rogers";
+                thirdPerson10.documentType = "Documento Nacional de Identidad";
+                thirdPerson10.documentNumber = "VIS001";
+                thirdPerson10.birthdate = "1989-06-28";
+                thirdPerson10.gender = "No binario";
+                thirdPerson10.civilStatus = "Casado/a";
+                thirdPerson10.doctor = "";
+                thirdPerson10.isPatient = "false";
+                thirdpersons.Add(thirdPerson10);
+
+                var thirdPerson11 = new ThirdPersn();
+                thirdPerson11.firstName = "Groot";
+                thirdPerson11.lastName = "";
+                thirdPerson11.documentType = "Registro Civil de Nacimiento";
+                thirdPerson11.documentNumber = "GRT789";
+                thirdPerson11.birthdate = "2020-09-09";
+                thirdPerson11.gender = "No binario";
+                thirdPerson11.civilStatus = "Soltero/a";
+                thirdPerson11.doctor = "Breidis Luna";
+                thirdPerson11.isPatient = "true";
+                thirdpersons.Add(thirdPerson11);
+
+                var thirdPerson12 = new ThirdPersn();
+                thirdPerson12.firstName = "Scott";
+                thirdPerson12.lastName = "Lang";
+                thirdPerson12.documentType = "Cédula de ciudadanía";
+                thirdPerson12.documentNumber = "ANT007";
+                thirdPerson12.birthdate = "1979-06-02";
+                thirdPerson12.gender = "Masculino";
+                thirdPerson12.civilStatus = "Divorciado/a";
+                thirdPerson12.doctor = "Daniel Palomino";
+                thirdPerson12.isPatient = "true";
+                thirdpersons.Add(thirdPerson12);
             }
             return thirdpersons;
         }
